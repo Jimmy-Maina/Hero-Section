@@ -1,3 +1,4 @@
+/* variables */
 :root {
   --main-font: "Montserrat", sans-serif;
   --main-color: #6e44ff;
@@ -5,8 +6,10 @@
   --lightgrey: #c5c3c6;
   --lightergrey: #e9ecef;
   --green: #4abf98;
+  --shadow: 0px 10px 30px 0px #999999;
 }
 
+/* global css */
 * {
   margin: 0;
   padding: 0;
@@ -26,25 +29,28 @@ body {
 }
 
 /* start of navigation */
-
+/* start of navbar */
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 7vh;
   width: 100%;
+  margin-top: 5px;
 }
 
+/* logo */
 .logo h4 {
   font-size: 1.8em;
   letter-spacing: 2px;
   color: var(--text-color);
   cursor: pointer;
+  margin-right: 20px;
 }
 
 #logo {
   color: var(--main-color);
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .nav-links {
@@ -52,6 +58,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   width: 50%;
+  margin-top: 15px;
 }
 
 .nav-links li {
@@ -60,9 +67,10 @@ nav {
 
 .nav-links li a {
   text-decoration: none;
-  color: #393d3f;
+  color: var(--text-color);
   font-size: 1.25em;
   letter-spacing: 1px;
+  max-width: 100%;
 }
 
 .nav-links li a::after {
@@ -79,17 +87,20 @@ nav {
   transition: all 0.4s ease-in-out;
 }
 
-.searchbox {
+/* searchbox */
+div.searchbox {
   border: 1px solid #c5c3c6;
-  padding: 10px 8%;
+  padding: 10px 7%;
   border-radius: 8px;
   cursor: text;
 }
 
 #search {
-  color: var(--text-color);
+  color: var(--lightgrey);
+  font-family: var(--main-font);
 }
 
+/* cart */
 .cart {
   border: 1px solid #c5c3c6;
   border-radius: 8px;
@@ -97,17 +108,20 @@ nav {
   cursor: text;
 }
 
+#zero {
+  color: var(--lightgrey);
+}
+
+/* profile photo */
 .dp {
-  border: 1px solid #c5c3c6;
   border-radius: 8px;
   width: 50px;
   height: 50px;
 }
-
 /* end of navigation */
 
 /* start of hero section */
-/* hero-imgs */
+/* sub nav */
 .sub-nav {
   display: flex;
   justify-content: flex-start;
@@ -126,38 +140,38 @@ nav {
   text-decoration: none;
   color: var(--text-color);
   font-size: 18px;
-  transition: all 0.4s ease-in-out;
+  cursor: unset;
 }
 
-.sub-nav li a:hover {
-  color: var(--main-color);
-  transition: all 0.4s ease-in-out;
+.tools-page::after {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 1.5px;
+  background-color: var(--main-color);
 }
 
-.container {
+/* start of hero-container (grid-layout) */
+.hero-container {
   display: grid;
   grid-template-areas: "hero-imgs content";
   grid-template-columns: 1fr 1fr;
   grid-gap: 50px;
-  height: 80vh;
 }
 
+/* hero images */
 .hero-imgs {
   grid-area: hero-imgs;
   display: grid;
-  grid-template-rows: 3fr 1fr;
+  grid-template-rows: 2.5fr 0.4fr;
   gap: 20px;
 }
-
-.hero-content {
-  grid-area: content;
-}
-
-.hero-img {
-  border: 1px solid var(--lightgrey);
+.hero-img img {
   border-radius: 10px;
+  cursor: pointer;
 }
 
+/* sub images */
 .sub-imgs {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -165,12 +179,23 @@ nav {
 }
 
 .sub-imgs > div {
-  border: 1px solid var(--lightgrey);
   border-radius: 10px;
 }
 
-/* hero-content */
+div.grow img {
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.5s ease-in-out;
+}
 
+div.grow img:hover {
+  box-shadow: var(--shadow);
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.1);
+}
+
+/* start of hero-content */
+/* heading */
 .heading {
   font-size: 50px;
   word-spacing: 2px;
@@ -187,6 +212,7 @@ span.purple {
   cursor: pointer;
 }
 
+/* price & discount (grid layout) */
 .content-grid {
   display: grid;
   grid-template-columns: 1fr 5fr;
@@ -216,7 +242,8 @@ sup {
   color: var(--green);
 }
 
-.btn {
+/* Quantity & CTA */
+.cash-out {
   display: flex;
   justify-content: left;
   align-items: flex-start;
@@ -251,24 +278,66 @@ button {
   font-weight: bold;
   font-size: 1.25em;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 button:hover {
   border: 1px solid var(--main-color);
   color: var(--main-color);
   background-color: #fff;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 button:active {
-  border: 3px solid var(--main-color);
   border-radius: 15px;
   color: var(--main-color);
   background-color: #fff;
-  transition: all 0.05s linear;
+  transform: scale(0.95);
+  transition: all 0.1s ease-in-out;
 }
 
+/* styling icons */
+.sub-nav-icon {
+  font-size: 0.8em;
+  padding-left: 10px;
+  cursor: pointer;
+  color: var(--lightgrey);
+}
+
+.sub-nav-icon:hover {
+  color: var(--main-color);
+  transition: all 0.4s ease-in-out;
+}
+
+.search-icon {
+  font-size: 1em;
+  color: var(--lightgrey);
+  cursor: pointer;
+  transform: translateX(-50px);
+}
+
+.basket {
+  color: var(--main-color);
+  font-size: 1em;
+  cursor: pointer;
+  transform: translateX(-30px);
+}
+
+.more {
+  padding: 0;
+  font-size: 1em;
+  color: var(--lightgrey);
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.more:hover {
+  color: var(--main-color);
+  transform: scale(1.2);
+  transition: all 0.4s ease-in-out;
+}
+
+/* responsive layout */
 @media screen and (max-width: 850px) {
   .nav-links {
     width: 80%;

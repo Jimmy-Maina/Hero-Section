@@ -4,67 +4,167 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- stylesheet -->
     <link rel="stylesheet" href="main.css" />
+
     <!-- Google fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap"
       rel="stylesheet"
     />
+
+    <!-- fontawesome icons -->
+    <script
+      src="https://kit.fontawesome.com/e16bec144b.js"
+      crossorigin="anonymous"
+    ></script>
+
     <title>Hero Section</title>
   </head>
+
   <body>
     <header>
+      <!-- start of navbar -->
       <nav>
+        <!-- logo -->
         <div class="logo">
-          <h4><span id="logo">S</span>hop.</h4>
+          <h4 title="HOME"><span id="logo">S</span>hop.</h4>
         </div>
+
+        <!-- navlinks -->
         <ul class="nav-links">
           <li><a href="#">Electronics</a></li>
           <li><a href="#">Fashion</a></li>
           <li><a href="#">Tools</a></li>
           <li><a href="#">Books</a></li>
           <li><a href="#">More</a></li>
+          <!-- 'more' icon -->
+          <li><span class="fas fa-angle-down more"></span></li>
         </ul>
-        <div class="searchbox"><span id="search">Search</span></div>
-        <div class="cart">0</div>
-        <div class="dp"></div>
+
+        <!-- searchbox -->
+        <div class="searchbox">
+          <span class="fas fa-search search-icon"></span>
+          <span id="search">Search</span>
+        </div>
+
+        <!-- cart -->
+        <div class="cart">
+          <span class="fas fa-shopping-basket basket"></span>
+          <span id="zero">0</span>
+        </div>
+
+        <!-- profile photo -->
+        <div class="dp">
+          <img
+            src="./images/profile-photo1.jpg"
+            alt="profile photo"
+            title="Profile"
+          />
+        </div>
       </nav>
+      <!-- end of navbar -->
 
       <!-- Start of Hero section -->
 
-      <!-- home, kitchen, tools -->
+      <!-- sub nav -->
       <div>
         <ul class="sub-nav">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Kitchen</a></li>
-          <li><a href="#">Tools</a></li>
+          <li>
+            <a href="#">Home</a
+            ><span class="fas fa-chevron-right sub-nav-icon"></span>
+          </li>
+
+          <li>
+            <a href="#">Kitchen</a
+            ><span class="fas fa-chevron-right sub sub-nav-icon"></span>
+          </li>
+
+          <li><a href="#" class="tools-page">Tools</a></li>
         </ul>
       </div>
 
-      <main class="container">
+      <!-- start of hero-container (grid-layout) -->
+      <section class="hero-container">
+        <!--start of hero images -->
         <div class="hero-imgs">
-          <div class="hero-img"><img src="" alt="vegetable knife" /></div>
-          <div class="sub-imgs">
-            <div><img src="" alt="" /></div>
-            <div><img src="" alt="" /></div>
-            <div><img src="" alt="" /></div>
+          <!-- main image -->
+          <div class="hero-img">
+            <img src="./images/vegetable-hero-img.jpg" alt="vegetable knife" />
+          </div>
+
+          <!-- sub images -->
+          <div class="sub-imgs grow">
+            <div>
+              <!-- sub image 1 -->
+              <img
+                src="./images/vegetable-sub-img1.jpg"
+                alt="vegetable knife"
+              />
+            </div>
+            <!-- sub image 2 -->
+            <div>
+              <img
+                src="./images/vegetable-sub-img2.jpg"
+                alt="vegetable knife"
+              />
+            </div>
+            <!-- sub image 3 -->
+            <div>
+              <img
+                src="./images/vegetable-sub-img3.jpg"
+                alt="vegetable knife"
+              />
+            </div>
           </div>
         </div>
+        <!-- end of hero images -->
+
+        <!-- start of hero content -->
         <div class="hero-content">
+          <!-- heading -->
           <h1 class="heading">Swiss Made Vegetable Cutting Knife</h1>
           <h6>BY <span class="purple">KC COMPANY</span></h6>
+          <!-- price & discount (grid layout) -->
           <div class="content-grid">
-          <div class="price"><sup>$</sup>25</div>
-          <p class="floated">
-            <span id="discount">Save 12%</span><br> inclusive of all Taxes</p></div>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea dolorum temporibus illum aliquid eos voluptas officiis minima quaerat, animi deserunt.</p>
+            <div class="price"><sup>$</sup>25</div>
+            <p>
+              <span id="discount">Save 12%</span><br />
+              inclusive of all Taxes
+            </p>
+          </div>
+          <!-- hero content text -->
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea dolorum
+            temporibus.
+            <br />
+            <br />
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+            dolor sit amet.
+            <br />
+            <br />
+            Accusamus eveniet consectetur suscipit non provident saepe?Lorem,
+            ipsum. Lorem ipsum dolor sit amet.
+            <br />
+            <br />
           </p>
-          <div class="btn">
-          <div class="quantity">QTY <br> <span id="two">2</span></div>
-          <div class="cta"><button>Add to Cart</button></div>
+          <!-- Quantity & CTA -->
+          <div class="cash-out">
+            <!-- quantity -->
+            <div class="quantity">
+              QTY
+              <br />
+              <span id="two">2</span>
+              <span class="fas fa-angle-down more"></span>
+            </div>
+            <!-- CTA -->
+            <div class="cta"><button>Add to Cart</button></div>
+          </div>
         </div>
-        <!-- End of Hero section -->
-      </main>
+        <!-- end of hero content -->
+      </section>
+      <!-- end of hero container -->
     </header>
+    <!-- End of Hero section -->
   </body>
 </html>
